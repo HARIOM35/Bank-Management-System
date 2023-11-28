@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Signup</title>
+    <style>
+         body {
+            background-color: #060101;
+            background-image: url();  }
+
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            box-shadow: 0 20px 50px #18225e;
+            border: 2px solid #f71b03;
+            padding: 20px;
+        }
+
+        .but {
+            height: fit-content;
+            border: 1px solid #f0a591;
+            padding: 65px 50px 50px;
+            box-shadow: 0 5px 10px rgba(237, 224, 224, 0.5);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /*Border design*/
+        .box span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .box span:nth-child(1) {
+            transform: rotate(0deg);
+        }
+
+        .box span:nth-child(2) {
+            transform: rotate(90deg);
+        }
+
+        .box span:nth-child(3) {
+            transform: rotate(180deg);
+        }
+
+        .box span:nth-child(4) {
+            transform: rotate(270deg);
+        }
+
+        .box span::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #50dfdb;
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            50% {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            50.1% {
+                transform: scaleX(1);
+                transform-origin: right;
+
+            }
+
+            100% {
+                transform: scaleX(0);
+                transform-origin: right;
+
+            }
+
+
+        }
+
+        /*SignUp design*/
+        #up {
+            text-align: center;
+            border: 5px solid #ac75f5;
+            width: 350px;
+            margin-top: 30px;
+            border-radius: 20px;
+            animation: upb-flicker s linear infinite;
+        }
+
+        #uph1 {
+            color: #fd0909;
+            font-family: 'Raleway';
+            font-size: 64px;
+            letter-spacing: 10px;
+            animation: uph1-flicker 3s linear infinite;
+        }
+
+        .ups {
+            display: inline;
+            animation: ups-flicker 4s linear infinite;
+        }
+
+
+        @keyframes upb-flicker {
+            0% {
+                opacity: 0;
+                box-shadow: 0px 0px 78px 4px #ac75f5;
+            }
+
+            2% {
+                opacity: 0.4;
+                box-shadow: 0px 0px 78px 4px #832a6d;
+            }
+
+            10% {
+                opacity: .8;
+                box-shadow: 0px 0px 78px 4px #ac75f5;
+            }
+
+            25% {
+                opacity: 0.4;
+                box-shadow: 0px 0px 78px 4px #832a6d;
+            }
+
+            50% {
+                opacity: .6;
+                box-shadow: 0px 0px 78px 4px #ac75f5;
+            }
+
+            65% {
+                opacity: 0.6;
+                box-shadow: 0px 0px 78px 4px #832a6d;
+            }
+
+            85% {
+                opacity: .5;
+                box-shadow: 0px 0px 78px 4px #ac75f5;
+            }
+
+            100% {
+                opacity: .8;
+                box-shadow: 0px 0px 78px 4px #832a6d;
+            }
+        }
+
+        @keyframes uph1-flicker {
+            0% {
+                opacity: 0.2;
+                text-shadow: 0px 0px 20px #b8da59;
+            }
+
+            5% {
+                opacity: 0.5;
+                text-shadow: 0px 0px 40px #e87810;
+            }
+
+            15% {
+                opacity: .1;
+                text-shadow: 0px 0px 20px #b8da59;
+            }
+
+            30% {
+                opacity: .6;
+                text-shadow: 0px 0px 40px #e87810;
+            }
+
+            55% {
+                opacity: 0.7;
+                text-shadow: 0px 0px 20px #b8da59;
+            }
+
+            75% {
+                opacity: 0.2;
+                text-shadow: 0px 0px 40px #e87810
+            }
+
+            100% {
+                opacity: .6;
+                text-shadow: 0px 0px 20px #b8da59;
+            }
+        }
+
+        @keyframes ups-flicker {
+            0% {
+                opacity: 0.1;
+                text-shadow: 0px 0px 29px #b1d362;
+            }
+
+            2% {
+                opacity: 0.1;
+                text-shadow: 0px 0px 29px #c2b223;
+            }
+
+            15% {
+                opacity: .8;
+                text-shadow: 0px 0px 29px #b1d362;
+            }
+
+            25% {
+                opacity: 0.1;
+                text-shadow: 0px 0px 29px #c2b223;
+            }
+
+            50% {
+                opacity: .6;
+                text-shadow: 0px 0px 29px #b1d362;
+            }
+
+            65% {
+                opacity: .1;
+                text-shadow: 0px 0px 29px #c2b223;
+            }
+
+            75% {
+                opacity: 0.7;
+                text-shadow: 0px 0px 29px #b1d362;
+            }
+
+            80% {
+                opacity: .5;
+                text-shadow: 0px 0px 29px #c2b223;
+            }
+        }
+
+        /*LogIN design*/
+        #in {
+            text-align: center;
+            border: 5px solid #d4d65b;
+            width: 350px;
+            border-radius: 20px;
+            padding: 5px;
+            animation: inb-flicker  linear infinite;
+        }
+
+        #inh1 {
+            color: #5ed608;
+            font-family: 'Raleway';
+            font-size: 64px;
+            letter-spacing: 10px;
+            animation: inh1-flicker 1s linear infinite;
+        }
+
+        .ins {
+            display: inline;
+            animation: ins-flicker s linear infinite;
+        }
+
+        @keyframes inb-flicker {
+            0% {
+                opacity: 0;
+                box-shadow: 0px 0px 78px 4px #e8e410;
+            }
+
+            2% {
+                opacity: 0.4;
+                box-shadow: 0px 0px 78px 4px #e85f10d0;
+            }
+
+            10% {
+                opacity: .8;
+                box-shadow: 0px 0px 78px 4px #e8e410;
+            }
+
+            25% {
+                opacity: 0.4;
+                box-shadow: 0px 0px 78px 4px #e85f10d0;
+            }
+
+            50% {
+                opacity: .6;
+                box-shadow: 0px 0px 78px 4px #e8e410;
+            }
+
+            65% {
+                opacity: 0.6;
+                box-shadow: 0px 0px 78px 4px #e85f10d0;
+            }
+
+            85% {
+                opacity: .5;
+                box-shadow: 0px 0px 78px 4px #e8e410;
+            }
+
+            100% {
+                opacity: .8;
+                box-shadow: 0px 0px 78px 4px #e85f10;
+            }
+        }
+
+        @keyframes inh1-flicker {
+            0% {
+                opacity: 0.2;
+                text-shadow: 0px 0px 20px #e810c4;
+            }
+
+            5% {
+                opacity: 0.7;
+                text-shadow: 0px 0px 40px #10e822;
+            }
+
+            15% {
+                opacity: .4;
+                text-shadow: 0px 0px 20px #e810c4;
+            }
+
+            30% {
+                opacity: .6;
+                text-shadow: 0px 0px 40px #10e822;
+            }
+
+            45% {
+                opacity: .3;
+                text-shadow: 0px 0px 20px #e810c4;
+            }
+
+            55% {
+                opacity: .6;
+                text-shadow: 0px 0px 40px #10e822;
+            }
+
+            5% {
+                opacity: 0.2;
+                text-shadow: 0px 0px 20px #e810c4;
+            }
+
+            75% {
+                opacity: 0.9;
+                text-shadow: 0px 0px 40px #10e822;
+            }
+
+            100% {
+                opacity: .4;
+                text-shadow: 0px 0px 20px #e810c4;
+            }
+        }
+
+        @keyframes ins-flicker {
+            0% {
+                opacity: 0.1;
+                text-shadow: 0 0 50px #10e822;
+            }
+
+            2% {
+                opacity: 0.8;
+                text-shadow: 0 0 50px #e810c4;
+            }
+
+            15% {
+                opacity: .4;
+                text-shadow: 0 0 50px #10e822;
+            }
+
+            25% {
+                opacity: 0.3;
+                text-shadow: 0 0 50px #e810c4;
+            }
+
+            35% {
+                opacity: .6;
+                text-shadow: 0 0 50px #10e822;
+            }
+
+            45% {
+                opacity: .2;
+                text-shadow: 0 0 50px #e810c4;
+            }
+
+            55% {
+                opacity: .7;
+                text-shadow: 0 0 50px #10e822;
+            }
+
+            65% {
+                opacity: .4;
+                text-shadow: 0 0 50px #e810c4;
+            }
+
+            75% {
+                opacity: 0.9;
+                text-shadow: 0 0 50px #10e822;
+            }
+
+            80% {
+                opacity: .5;
+                text-shadow: 0 0 50px #e810c4;
+            }
+
+            100% {
+                opacity: .7;
+                text-shadow: 0 0 50px #10e822;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+  <div class="box">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="but">
+        <div id="in">
+            <a href="login.html">
+                <h1 id="inh1">L<div class="ins">O</div>G <div class="ins">IN</div>
+                </h1>
+            </a>
+
+        </div>
+        <div id="up">
+            <a href="signup.html">
+                <h1 id="uph1">SI<div class="ups">G</div>N <div class="ups">UP</div>
+                </h1>
+            </a>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transitions</title>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy|Monoton|Russo+One");
+
+body {
+  background-color: blue;
+}
+
+.container {
+  margin: 150px 50px 150px 50px;
+}
+
+.box-1 {
+  text-align: center;
+  font-size: 100px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+  font-family: "Luckiest Guy", cursive;
+  animation: move 3s infinite linear;
+  animation-delay: 1s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: 5;
+  overflow: hidden;
+}
+
+.text-1 {
+  font-family: "Luckiest Guy", cursive;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 20px black;
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  animation: page 3s infinite linear;
+  animation-delay: 1s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: 1;
+}
+
+@keyframes page {
+  0% {
+    transform: rotate(0deg);
+    left: 0px;
+  }
+  25% {
+    transform: rotate(20deg);
+    left: 0px;
+  }
+  50% {
+    transform: rotate(0deg);
+    left: 500px;
+  }
+  55% {
+    transform: rotate(0deg);
+    left: 500px;
+  }
+  70% {
+    transform: rotate(0deg);
+    left: 500px;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-360deg);
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.02;
+  }
+  30% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.06;
+  }
+  50% {
+    opacity: 0.08;
+  }
+  60% {
+    opacity: 0.09;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  80% {
+    opacity: 1;
+    color: red;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    color: red;
+  }
+}
+
+</style>
+
+<body>
+
+  <div class="container">
+    <div class="box">
+
+      <p class="box-1">404</p>
+    </div>
+    <div class="text">
+      <p class="text-1">sorry this page is not ready</p>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
